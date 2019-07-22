@@ -6,7 +6,7 @@ const CONFIG_FILE = '.carbon-now.json';
 const CONFIG_DUMMY = '.carbon-now-dummy.json';
 const FULL_CONFIG_PATH = `${HOMEDIR}/${CONFIG_FILE}`;
 const FULL_DUMMY_CONFIG_PATH = `${HOMEDIR}/${CONFIG_DUMMY}`;
-const CARBON_URL = 'https://carbon.now.sh/';
+const CARBON_URL = 'http://localhost:3009/';
 const LATEST_PRESET = 'latest-preset';
 
 module.exports = {
