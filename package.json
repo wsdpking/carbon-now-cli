@@ -58,7 +58,6 @@
 		"ava": "^0.25.0",
 		"child-process-promise": "^2.2.1",
 		"execa": "^1.0.0",
-		"husky": "^1.0.0-rc.14",
 		"xo": "^0.21.1"
 	},
 	"xo": {
@@ -71,11 +70,6 @@
 		"rules": {
 			"no-warning-comments": 0,
 			"promise/prefer-await-to-then": 0
-		}
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "npm test"
 		}
 	}
 }
