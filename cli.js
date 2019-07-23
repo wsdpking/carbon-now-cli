@@ -105,7 +105,7 @@ const cli = meow(`
 		headless: {
 			type: 'boolean',
 			alias: 'h',
-			default: false
+			default: true
 		}
 	}
 });
