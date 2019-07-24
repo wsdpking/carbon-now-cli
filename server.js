@@ -5,6 +5,16 @@ const util = require ( 'util' );
 const uuid = require ( 'uuid' );
 const fs = require ( 'fs-extra' );
 const del = require ('del');
+const bodyParser = require ('body-parser');
+
+// Body parser middleware
+app.use ( bodyParser.json () );
+app.use ( bodyParser.urlencoded ( {
+	extended: true
+} ) );
+app.use ( bodyParser.text ( {
+	type : [ 'application/xml', 'text/plain','application/text' ]
+} ) );
 
 // Async route wrap to deal with error handling
 const wrap = ( fn ) => {
@@ -18,12 +28,15 @@ const wrap = ( fn ) => {
 app.post ( '/api/v1.0/carbonize', wrap ( async ( req, res, next ) => {
 	try {
 
-		// Create a temporary folder for the image
+		// Create a temporary folder for the process
 		let tempFolderName = uuid.v4 ();
 		await fs.mkdir ( tempFolderName );
 
+		// Save the input text to a JS file
+		await fs.writeFile (`${tempFolderName}/text.js`, req.body);
+
 		// Call cli command using child process exec
-		let output = await util.promisify ( childProcess.exec ) ( process.execPath + ` ./cli.js cli.js -l ${tempFolderName} -t image` );
+		let output = await util.promisify ( childProcess.exec ) ( process.execPath + ` ./cli.js ${tempFolderName}/text.js -l ${tempFolderName} -t image` );
 
 		// Check if a particular string is present - if it is then the image creation was successful
 		if ( output.stdout.includes ( 'The file can be found here' ) ) {

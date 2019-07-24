@@ -34,6 +34,7 @@
 		"beautiful"
 	],
 	"dependencies": {
+		"body-parser": "^1.19.0",
 		"chalk": "^2.4.1",
 		"clipboardy": "^1.2.3",
 		"del": "^3.0.0",
