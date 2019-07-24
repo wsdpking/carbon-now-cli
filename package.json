@@ -37,8 +37,10 @@
 		"chalk": "^2.4.1",
 		"clipboardy": "^1.2.3",
 		"del": "^3.0.0",
+		"express": "^4.17.1",
 		"file-exists": "^5.0.1",
 		"file-extension": "^4.0.5",
+		"fs-extra": "^8.1.0",
 		"get-stdin": "^6.0.0",
 		"globby": "^8.0.1",
 		"inquirer": "^6.2.1",
@@ -52,7 +54,8 @@
 		"query-string": "^6.2.0",
 		"tempy": "^0.2.1",
 		"terminal-image": "^0.1.2",
-		"update-notifier": "^2.5.0"
+		"update-notifier": "^2.5.0",
+		"uuid": "^3.3.2"
 	},
 	"devDependencies": {
 		"ava": "^0.25.0",
