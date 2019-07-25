@@ -33,7 +33,7 @@ app.post ( '/api/v1.0/carbonize', wrap ( async ( req, res, next ) => {
 		await fs.mkdir ( tempFolderName );
 
 		// Save the input text to a JS file
-		await fs.writeFile (`${tempFolderName}/text.js`, req.body);
+		await fs.writeFile (`${tempFolderName}/text.js`, req.body.text);
 
 		// Call cli command using child process exec
 		let output = await util.promisify ( childProcess.exec ) ( process.execPath + ` ./cli.js ${tempFolderName}/text.js -l ${tempFolderName} -t image` );
