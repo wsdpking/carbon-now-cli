@@ -29,7 +29,7 @@ module.exports = {
 	// Auto adjust width
 	wa: true,
 	// Line height
-	lh: '133%',
+	lh: '100%',
 	// Padding vertical
 	pv: '0px',
 	// Padding horizontal
