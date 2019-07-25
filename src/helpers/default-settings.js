@@ -17,7 +17,7 @@ module.exports = {
 	// Font family
 	fm: 'Hack',
 	// Font size
-	fs: '18px',
+	fs: '15px',
 	// Line numbers
 	ln: false,
 	// Drop shadow
@@ -31,16 +31,16 @@ module.exports = {
 	// Line height
 	lh: '133%',
 	// Padding vertical
-	pv: '48px',
+	pv: '0px',
 	// Padding horizontal
-	ph: '32px',
+	ph: '0px',
 	// Squared image
 	si: false,
 	// Watermark
 	wm: false,
 	// Export size
 	// 1x, 2x, 4x
-	es: '2x',
+	es: '1x',
 	// Export type
 	// This is not supported as a URL parameter by Carbon,
 	// instead used as a default setting on my part
