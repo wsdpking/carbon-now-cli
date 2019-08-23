@@ -36,7 +36,7 @@ app.post ( '/api/v1.0/carbonize', wrap ( async ( req, res, next ) => {
 		await fs.writeFile (`${tempFolderName}/text.js`, req.body.text);
 
 		// Call cli command using child process exec
-		let output = await util.promisify ( childProcess.exec ) ( process.execPath + ` ./cli.js ${tempFolderName}/text.js -l ${tempFolderName} -t image` );
+		let output = await util.promisify ( childProcess.exec ) ( process.execPath + ` ./cli.js ${tempFolderName}/text.js -l ${tempFolderName} -t image${req.body.preset? ` -p ${req.body.preset}` : ''}` );
 
 		// Check if a particular string is present - if it is then the image creation was successful
 		if ( output.stdout.includes ( 'The file can be found here' ) ) {
